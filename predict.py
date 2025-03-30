@@ -31,8 +31,7 @@ def main():
 			print("Erreur : Le kilométrage ne peut pas être négatif.")
 		else:
 			predicted_price = estimatePrice(mileage, theta0, theta1)
-			print(f"Le prix estimé pour une voiture avec {mileage} km est de {predicted_price:.2f}$.")
-			return predicted_price
+			print(f"{(int)(predicted_price)}")
 	except ValueError:
 		print("Erreur : Veuillez entrer un kilométrage valide.")
 	

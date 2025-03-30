@@ -19,7 +19,6 @@ except Exception as e:
 
 # m = sum(1 for row in data if row[0].strip())
 m = len(mileage) # ca fonctionne aussi
-print(f"Nombre de lignes dans le dataset : {m}")
 if m == 0:
 	print("Erreur : Le fichier CSV est vide.")
 	exit(1)
@@ -43,6 +42,8 @@ iterations = 10000
 learningRate = 0.01
 
 #####   algo   #####
+#! vu les resultats pas sur que l'algo soit bon mais chiant quoi...
+
 for _ in range(iterations):
 	sum_theta0 = 0
 	sum_theta1 = 0
@@ -66,12 +67,13 @@ print(f"Valeurs finales :")
 print(f"theta0 = {theta0_final}")
 print(f"theta1 = {theta1_final}")
 
-def write_values(theta0, theta1):
-	try:
-		with open("theta_values.txt", "w") as file:
-			file.write(f"{theta0}\n")
-			file.write(f"{theta1}\n")
-	except Exception as e:
-		print(f"Erreur lors de la sauvegarde des valeurs : {e}")
+try:
+	with open("theta_values.txt", "w") as file:
+		file.write(f"{theta0_final}\n")
+		file.write(f"{theta1_final}\n")
+except Exception as e:
+	print(f"Erreur lors de la sauvegarde des valeurs : {e}")
 
 #todo need to add function for more visibility
+
+
